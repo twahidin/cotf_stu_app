@@ -5,7 +5,6 @@ from math import pi
 import pygsheets
 from google.oauth2 import service_account
 import json
-from MBTI_questions import questions_EI, questions_SN, questions_TF, questions_JP
 from fpdf import FPDF
 import base64
 
