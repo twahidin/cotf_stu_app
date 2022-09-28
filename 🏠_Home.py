@@ -395,8 +395,8 @@ def main():
 	if st.session_state.g_key == True or login_flag == True:	
 		st.write("###")
 		st.write("🗂️ Please click on the tabs below to access your information")
-		interests_profiler_tab, group_acts_tab, competencies_strategies_tab = st.tabs(["🤾 Interests & Profile", "👥 Groups & Activities", "📊 Competencies & Strategies"])
-
+		#interests_profiler_tab, group_acts_tab, competencies_strategies_tab = st.tabs(["🤾 Interests & Profile", "👥 Groups & Activities", "📊 Competencies & Strategies"])
+		interests_profiler_tab = st.tabs(["🤾 Interests & Profile"])
 	# SELF_TEST = 12
 	# PEER_TEST = 13
 	# INTEREST_TEST = 14
