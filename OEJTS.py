@@ -1,6 +1,6 @@
 import streamlit as st
 
-U = 'Choose statement'
+U = '⬅️ Choose ➡️'
 
 OEJTS_list = [("q1","Makes lists", "Relies on memory"),("q2","Sceptical","Wants to believe"),("q3","Bored by time alone","Needs time alone"),
 ("q4","Accepts things as they are","unsatisfied with the ways things are"),("q5","Keeps a clean room","Just puts stuff where ever"),
