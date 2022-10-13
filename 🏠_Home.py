@@ -203,8 +203,8 @@ def pdf_generator(name, act_list, links_list):
 
 
 def create_download_link(val, filename):
-				b64 = base64.b64encode(val)  # val looks like b'...'
-				return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
+	b64 = base64.b64encode(val)  # val looks like b'...'
+	return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
 
 def retrieve_student_data(stu_list):
 	p_list = []
@@ -287,7 +287,7 @@ def main():
 	st.title("COTF - Students Application")
 	#personality_code = ['A','B','C','D']
 	placeholder1 = st.empty()
-	
+	#st.caption("Click on the side bar (>) to complete your Interests Profiler, enter 'Guest' above to access the results")
 	#placeholder4 = st.empty()
 	login_flag = False
 	guest_flag = False
@@ -347,6 +347,7 @@ def main():
 		#placeholder1.empty()
 
 	elif st.session_state.g_key == 'None':
+
 		with placeholder1.form(key='authenticate'):
 			st.write("Please enter 'Guest' in the Student code if you do not have any class or student codes")
 			stu_code = st.text_input('Student code:')
