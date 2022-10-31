@@ -481,7 +481,7 @@ def main():
 						else:
 							st.write("Personality Code not found: ", pc)
 					else:
-						st.write("Please complete the Interest Profiler (side bar) to generate the list of interests")
+						st.write("Please complete the Interests Discovery Quiz (side bar) to generate the list of interests")
 
 			
 	#show complete
