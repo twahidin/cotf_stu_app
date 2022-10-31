@@ -155,12 +155,12 @@ def pdf_generator(name, act_list, links_list):
 		pdf = FPDF()
 		pdf.add_page()
 		pdf.set_font('Arial','B', 14)
-		pdf.cell(40, 10, "Interests Profiler Results", ln = 1)
+		pdf.cell(40, 10, "Interests Discovery Results", ln = 1)
 		pdf.set_font('Arial','', 12)
 		pdf.cell(40, 10, "Name: " + name, ln = 2)
 		#pdf.set_text_color(255,0,0)
 		pdf.set_font('Arial', 'U', 12)
-		pdf.cell(40, 10, "Based one the Interest Profiler, you can consider the following hobbies:", ln = 3)
+		pdf.cell(40, 10, "Based one the Interests Discovery quiz, you can consider the following hobbies:", ln = 3)
 		pdf.set_text_color(0,0,0)
 		pdf.set_font('Arial', '', 12)
 		pdf.cell(40, 10, act_list, ln = 4)
@@ -178,7 +178,7 @@ def pdf_generator(name, act_list, links_list):
 		#     i += 1 
 		#st.write("Test")
 
-		html = create_download_link(pdf.output(dest="S").encode("latin-1"), "Interests Profiler Results")
+		html = create_download_link(pdf.output(dest="S").encode("latin-1"), "Interests Discovery Results")
 		st.markdown(html, unsafe_allow_html=True)
 
 	# if submit:
@@ -268,7 +268,7 @@ def print_interests_list(inputlist): #test
 	#st.write(inputlist)
 	act_str = inputlist[0][0]
 
-	st.write("Based on the Interest Profiler, you can consider the following hobbies:")
+	st.write("Based on the Interests Discovery quiz, you can consider the following hobbies:")
 	for i in range(len(inputlist[0])):
 		if i != 0:
 			act_str += ', ' + inputlist[0][i]
@@ -397,7 +397,7 @@ def main():
 		st.write("###")
 		st.write("🗂️ Please click on the tabs below to access your information")
 		#interests_profiler_tab, group_acts_tab, competencies_strategies_tab = st.tabs(["🤾 Interests & Profile", "👥 Groups & Activities", "📊 Competencies & Strategies"])
-		interests_profiler_tab, group_acts_tab = st.tabs(["🤾 Interests & Profile", "👥 Groups & Activities"])
+		interests_profiler_tab, group_acts_tab = st.tabs(["🤾 Interests Discovery", "👥 Groups & Activities"])
 	# SELF_TEST = 12
 	# PEER_TEST = 13
 	# INTEREST_TEST = 14
@@ -423,7 +423,7 @@ def main():
 				# 	st.write("👥 Group Requests Page")
 
 				st.write("##")
-				with st.expander("Interest Profiler Results"):
+				with st.expander("Interests Discovery Results"):
 					if st.session_state.pc_key != 'None':
 						pc = st.session_state.pc_key
 						df_interests = extract_df(interests_url,INT_PRO,gc)[0]
@@ -462,13 +462,13 @@ def main():
 						else:
 							st.write("Personality Code not found: ", pc)
 					else:
-						st.write("Please complete the Interest Profiler (side bar) to generate the list of interests")
+						st.write("Please complete the Interests Discovery Quiz (side bar) to generate the list of interests")
 			elif st.session_state.g_key == True:
 				#if st.session_state.pc_key == 'None': 
 					#placeholder2.write("You may use the Interest Profiler (side bar) to assess yourself")
 					#placeholder3.write("Please click on the 🏠 Home page after you have submitted your answers to access your results")
 		
-				with st.expander("Interest Profiler Results"):
+				with st.expander("Interests Discovery Results"):
 					if st.session_state.pc_key != 'None': #the profiling is complete
 						#st.write("Interest Profiler results")
 						df_interests = extract_df(interests_url,INT_PRO,gc)[0]
